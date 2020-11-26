@@ -1,11 +1,20 @@
 package com.example.khuinkhujik;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.core.graphics.TypefaceCompatApi26Impl;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
+import android.view.MotionEvent;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
@@ -16,34 +25,120 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ShowJobActivity extends AppCompatActivity {
-    private static ArrayList<ArrayList<String>> jobList = new ArrayList<ArrayList<String>>();
-    private static TextView textView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_job);
-        textView = (TextView) findViewById(R.id.textView);
-        try {
-            readDataFromCsv();
-            textView.setText("d");
-        } catch (IOException | CsvValidationException e) {
-            e.printStackTrace();
+
+        readCSVFIle();
+    }
+
+    private void readCSVFIle() {
+        Intent intent = getIntent();
+        int whatCSVFile = intent.getExtras().getInt("jobNumber");
+        int[] csvFile =  {R.raw.csv1, R.raw.csv2, R.raw.csv3, R.raw.csv4, R.raw.csv5, R.raw.csv6, R.raw.csv7, R.raw.csv8, R.raw.csv9, R.raw.csv10};
+
+        InputStream is = getResources().openRawResource(csvFile[whatCSVFile - 1]);
+        BufferedReader reader = new BufferedReader(
+                new InputStreamReader(is, Charset.forName("UTF-8"))
+        );
+        String line="";
+        try{
+            while((line=reader.readLine())!=null){
+                String[] tokens = line.split(",");
+                LinearLayout linearLayout = (LinearLayout)findViewById(R.id.linearLayout);
+
+                LinearLayout.LayoutParams layoutParams_linear = new LinearLayout.LayoutParams(
+                        ViewGroup.LayoutParams.MATCH_PARENT,
+                        ViewGroup.LayoutParams.WRAP_CONTENT);
+                layoutParams_linear.setMargins(0, 100, 0, 0);
+
+                LinearLayout linearLayout1 = new LinearLayout(this);
+                linearLayout1.setBackground(ContextCompat.getDrawable(this, R.drawable.box));
+                linearLayout1.setLayoutParams(layoutParams_linear);
+                linearLayout1.setOrientation(LinearLayout.VERTICAL);
+
+                ViewGroup.LayoutParams layoutParams_textview = new ViewGroup.LayoutParams(
+                        ViewGroup.LayoutParams.MATCH_PARENT - 500,
+                        ViewGroup.LayoutParams.WRAP_CONTENT);
+
+                TextView textView1 = new TextView(this);
+                textView1.setText(tokens[0]);
+                textView1.setTextSize(30);
+                textView1.setPadding(50, 50, 50, 0);
+                textView1.setLayoutParams(layoutParams_textview);
+                textView1.setTypeface(getResources().getFont(R.font.bmyeonsung), Typeface.BOLD);
+                textView1.setTextColor(Color.parseColor("#505050"));
+                linearLayout1.addView(textView1);
+
+                LinearLayout linearLayout2 = new LinearLayout(this);
+                linearLayout2.setOrientation(LinearLayout.HORIZONTAL);
+
+                TextView textView2 = new TextView(this);
+                textView2.setText(tokens[1]);
+                textView2.setTextSize(15);
+                textView2.setPadding(50, 25, 0, 50);
+                textView2.setLayoutParams(layoutParams_textview);
+                textView2.setTypeface(getResources().getFont(R.font.bmyeonsung), Typeface.BOLD);
+                textView2.setTextColor(Color.parseColor("#505050"));
+                linearLayout2.addView(textView2);
+
+                TextView textView3 = new TextView(this);
+                textView3.setText(tokens[2]);
+                textView3.setTextSize(15);
+                textView3.setPadding(50, 25, 0, 50);
+                textView3.setLayoutParams(layoutParams_textview);
+                textView3.setTypeface(getResources().getFont(R.font.bmyeonsung), Typeface.BOLD);
+                textView3.setTextColor(Color.parseColor("#505050"));
+                linearLayout2.addView(textView3);
+
+                TextView textView4 = new TextView(this);
+                textView4.setText(tokens[3]);
+                textView4.setTextSize(15);
+                textView4.setPadding(50, 25, 0, 50);
+                textView4.setLayoutParams(layoutParams_textview);
+                textView4.setTypeface(getResources().getFont(R.font.bmyeonsung));
+                textView4.setTypeface(getResources().getFont(R.font.bmyeonsung), Typeface.BOLD);
+                textView4.setTextColor(Color.parseColor("#505050"));
+                linearLayout2.addView(textView4);
+
+                linearLayout1.addView(linearLayout2);
+
+                linearLayout.addView(linearLayout1);
+
+//                    for(int i = 0; i < tokens.length; i++){
+//                        TextView textView = new TextView(this);
+//                        ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+//                        textView.setLayoutParams(layoutParams);
+//                        textView.setText(tokens[i]);
+//                        linearLayout.addView(textView);
+//                    }
+
+//                Log.d("ShowJobActivity", tokens[0]);
+            }
+
+        }catch (IOException e){
+            Log.d("ShowJobActivity", "error");
         }
     }
 
-    public void readDataFromCsv() throws IOException, CsvValidationException {
-        InputStreamReader is = new InputStreamReader(getResources().openRawResource(R.raw.csv1));
-        BufferedReader reader = new BufferedReader(is);
-        CSVReader read = new CSVReader(reader);
-        String[] record = null;
-        while ((record = read.readNext()) != null){
-            textView.setText(record[0]);
+    public boolean onTouchEvent(MotionEvent event) {
+        if(event.getAction()==MotionEvent.ACTION_DOWN || event.getAction()==MotionEvent.ACTION_MOVE){
+
+            Intent intent = new Intent(getApplication(), JobActivity.class);
+            startActivity(intent);
+            overridePendingTransition(0, 0);
+            ShowJobActivity.this.finish();
         }
+        return true;
     }
+
 }

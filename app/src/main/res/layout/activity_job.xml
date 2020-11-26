@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ShowJobActivity">
+    tools:context=".JobActivity">
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -49,7 +49,7 @@
             android:fontFamily="@font/bmyeonsung"
             android:textStyle="bold"
             android:textColor="#505050"
-            android:text="원하시는 직종을 골라주세요"
+            android:text="선택하신 직종과 관련된 \n리스트를 보여드리도록 하겠습니다"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -79,19 +79,5 @@
         android:background="#CCECEDEA">
     </RelativeLayout>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/linearLayout"
-            android:layout_width="400dp"
-            android:layout_height="match_parent"
-            android:background="#00ECEDEA"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_horizontal"
-            android:orientation="vertical">
 
-        </LinearLayout>
-    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

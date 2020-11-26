@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".ShowJobActivity"></activity>
+        <activity android:name=".JobActivity"></activity>
+        <activity android:name=".ShowJobActivity" />
         <activity android:name=".JobListActivity" />
         <activity android:name=".ShowJobListActivity" />
         <activity android:name=".SelectorActivity" />
