@@ -18,7 +18,20 @@ public class JobActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_job);
-    }
 
+        Intent intent = getIntent();
+        String jobTitle = intent.getExtras().getString("jobTitle");
+        String jobPay = intent.getExtras().getString("jobPay");
+        String jobDay = intent.getExtras().getString("jobDay");
+        String jobTime = intent.getExtras().getString("jobTime");
+        String jobWork = intent.getExtras().getString("jobWork");
+        String jobCondition = intent.getExtras().getString("jobCondition");
+        String jobURL = intent.getExtras().getString("jobURL");
+
+
+        Log.d("log01", jobTitle + jobPay + jobDay + jobTime + jobWork + jobCondition + jobURL);
+
+
+    }
 
 }

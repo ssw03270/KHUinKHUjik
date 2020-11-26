@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.MotionEvent;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -112,17 +113,31 @@ public class ShowJobActivity extends AppCompatActivity {
 
                 linearLayout1.addView(linearLayout2);
 
+                View.OnClickListener clickListener = new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Log.d("log01",tokens[0]);
+
+                        Intent intent = new Intent(getApplicationContext(),JobActivity.class);
+
+                        intent.putExtra("jobTitle", tokens[0]);
+                        intent.putExtra("jobPay", tokens[1]);
+                        intent.putExtra("jobDay", tokens[2]);
+                        intent.putExtra("jobTime", tokens[3]);
+                        intent.putExtra("jobWork", tokens[4]);
+                        intent.putExtra("jobCondition", tokens[5]);
+                        intent.putExtra("jobURL", tokens[6]);
+
+                        startActivity(intent);
+                        overridePendingTransition(0, 0);
+                        ShowJobActivity.this.finish();
+
+                    }
+                };
+                linearLayout1.setOnClickListener(clickListener);
+
                 linearLayout.addView(linearLayout1);
 
-//                    for(int i = 0; i < tokens.length; i++){
-//                        TextView textView = new TextView(this);
-//                        ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-//                        textView.setLayoutParams(layoutParams);
-//                        textView.setText(tokens[i]);
-//                        linearLayout.addView(textView);
-//                    }
-
-//                Log.d("ShowJobActivity", tokens[0]);
             }
 
         }catch (IOException e){
