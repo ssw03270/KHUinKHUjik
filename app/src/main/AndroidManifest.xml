@@ -9,8 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".ReadyActivity"></activity>
-        <activity android:name=".TrySelectorActivity" />
+        <activity android:name=".TryInputActivity"></activity>
         <activity android:name=".TryActivity" />
         <activity android:name=".JobActivity" />
         <activity android:name=".ShowJobActivity" />

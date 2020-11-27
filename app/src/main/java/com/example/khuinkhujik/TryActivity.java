@@ -48,13 +48,13 @@ public class TryActivity extends AppCompatActivity {
         if(event.getAction()==MotionEvent.ACTION_DOWN || event.getAction()==MotionEvent.ACTION_MOVE){
             touchCnt += 1;
             if(touchCnt == 1){
-                introText.setText("지원서 작성 방식으로는 \n 총 두가지가 존재합니다");
+                introText.setText("우선 이력서 작성을 도와드리겠습니다");
                 tts.speak(introText.getText().toString(),TextToSpeech.QUEUE_FLUSH, null);
             }else if(touchCnt == 2){
-                introText.setText("영상과 서류 중에서 \n 어떤 방식으로 지원하시겠습니까?");
+                introText.setText("화면에 나타나는 질문에 응답하시면 \n 저절로 이력서가 작성됩니다");
                 tts.speak(introText.getText().toString(),TextToSpeech.QUEUE_FLUSH, null);
             }else{
-                Intent intent = new Intent(getApplication(), TrySelectorActivity.class);
+                Intent intent = new Intent(getApplication(), TryInputActivity.class);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
                 TryActivity.this.finish();

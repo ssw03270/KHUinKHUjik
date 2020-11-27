@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TrySelectorActivity">
+    tools:context=".TryInputActivity">
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -49,7 +49,7 @@
             android:fontFamily="@font/bmyeonsung"
             android:textStyle="bold"
             android:textColor="#505050"
-            android:text="영상과 서류 중에서 \n어떤 방식으로 지원하시겠습니까?"
+            android:text="화면에 나타나는 질문에 응답하시면 \n 저절로 이력서가 작성됩니다"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -77,47 +77,74 @@
         android:layout_height="match_parent"
         android:background="#CCECEDEA">
     </RelativeLayout>
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/linearLayout"
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#00ECEDEA"
-        android:gravity="center_vertical"
-        android:orientation="vertical">
+        android:gravity="center_horizontal">
 
-        <LinearLayout
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/linearLayout"
             android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal">
-            <Button
-                android:id="@+id/buttonVideo"
-                android:background="@drawable/box"
-                android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#00ECEDEA"
+            android:orientation="vertical">\
+
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="15dp"
-                android:text="영상 지원"
-                android:textSize="40sp"
+                android:text="이력서 작성"
+                android:textStyle="bold"
+                android:textColor="#505050"
+                android:textSize="50dp"
                 android:fontFamily="@font/bmyeonsung"
-                android:onClick="videoButton"/>
+                android:gravity="center_horizontal"
+                android:layout_marginTop="50dp"/>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"/>
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/textQuestion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="성함이 어떻게 되시나요?"
+                    android:textStyle="bold"
+                    android:textColor="#505050"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/bmyeonsung"
+                    android:layout_marginTop="20dp"/>
 
-            <Button
-                android:id="@+id/buttonDocument"
-                android:background="@drawable/box"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="15dp"
-                android:text="서류 지원"
-                android:textSize="40sp"
-                android:fontFamily="@font/bmyeonsung"
-                android:onClick="documentButton"/>
+                <EditText
+                    android:id="@+id/editAnswer"
+                    android:hint="여기에 입력해주세요."
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_marginTop="20dp"
+                    android:textStyle="bold"
+                    android:textColor="#505050"
+                    android:background="@drawable/box"/>
+
+                <Button
+                    android:id="@+id/buttonTry"
+                    android:background="@drawable/box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_gravity="center_horizontal"
+                    android:text="다음으로"
+                    android:textSize="40sp"
+                    android:textStyle="bold"
+                    android:textColor="#505050"
+                    android:fontFamily="@font/bmyeonsung"
+                    android:onClick="tryButton"/>
+            </LinearLayout>
+
+
         </LinearLayout>
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
