@@ -41,6 +41,7 @@ public class JobListActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(),ShowJobActivity.class);
         intent.putExtra("jobNumber",1);
         startActivity(intent);
+        overridePendingTransition(0, 0);
         JobListActivity.this.finish();
     }
     public void secondButton(View v){
@@ -48,6 +49,7 @@ public class JobListActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(),ShowJobActivity.class);
         intent.putExtra("jobNumber",2);
         startActivity(intent);
+        overridePendingTransition(0, 0);
         JobListActivity.this.finish();
 
     }

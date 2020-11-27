@@ -61,6 +61,9 @@ public class JobActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void tryButton(View v){
-        Log.d("log01", "aaaa");
+        Intent intent = new Intent(getApplication(), TryActivity.class);
+        startActivity(intent);
+        overridePendingTransition(0, 0);
+        JobActivity.this.finish();
     }
 }
