@@ -56,7 +56,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView"
@@ -79,5 +78,154 @@
         android:background="#CCECEDEA">
     </RelativeLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/linearLayout"
+            android:layout_width="350dp"
+            android:layout_height="match_parent"
+            android:background="#00ECEDEA"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/textTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="jobTitle"
+                android:textStyle="bold"
+                android:textColor="#505050"
+                android:textSize="50dp"
+                android:fontFamily="@font/bmyeonsung"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="50dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/box"
+                android:layout_marginTop="50dp"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/textInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="기본정보"
+                    android:textStyle="bold"
+                    android:textColor="#505050"
+                    android:textSize="30dp"
+                    android:fontFamily="@font/bmyeonsung"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="25dp"/>
+
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textPay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="임금 : pay"
+                        android:textStyle="bold"
+                        android:textColor="#505050"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/bmyeonsung"
+                        android:layout_marginTop="20dp"/>
+
+                    <TextView
+                        android:id="@+id/textDay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="근무형태 : day"
+                        android:textStyle="bold"
+                        android:textColor="#505050"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/bmyeonsung"
+                        android:layout_marginTop="15dp"/>
+
+                    <TextView
+                        android:id="@+id/textTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="근무시간 : time"
+                        android:textStyle="bold"
+                        android:textColor="#505050"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/bmyeonsung"
+                        android:layout_marginTop="15dp"/>
+
+                    <TextView
+                        android:id="@+id/textWork"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="직무내용 : work"
+                        android:textStyle="bold"
+                        android:textColor="#505050"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/bmyeonsung"
+                        android:layout_marginTop="15dp"/>
+
+                    <TextView
+                        android:id="@+id/textCondition"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="경력조건 : condition"
+                        android:textStyle="bold"
+                        android:textColor="#505050"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/bmyeonsung"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="25dp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="50dp">
+                <Button
+                    android:id="@+id/buttonInfo"
+                    android:background="@drawable/box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="15dp"
+                    android:text="상세정보"
+                    android:textSize="40sp"
+                    android:fontFamily="@font/bmyeonsung"
+                    android:onClick="infoButton"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+
+                <Button
+                    android:id="@+id/buttonTry"
+                    android:background="@drawable/box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="15dp"
+                    android:text="지원하기"
+                    android:textSize="40sp"
+                    android:fontFamily="@font/bmyeonsung"
+                    android:onClick="tryButton"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
