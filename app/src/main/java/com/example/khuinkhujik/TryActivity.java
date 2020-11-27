@@ -45,7 +45,7 @@ public class TryActivity extends AppCompatActivity {
     }
 
     public boolean onTouchEvent(MotionEvent event) {
-        if(event.getAction()==MotionEvent.ACTION_DOWN || event.getAction()==MotionEvent.ACTION_MOVE){
+        if(event.getAction()==MotionEvent.ACTION_DOWN){
             touchCnt += 1;
             if(touchCnt == 1){
                 introText.setText("우선 이력서 작성을 도와드리겠습니다");

@@ -146,7 +146,7 @@ public class ShowJobActivity extends AppCompatActivity {
     }
 
     public boolean onTouchEvent(MotionEvent event) {
-        if(event.getAction()==MotionEvent.ACTION_DOWN || event.getAction()==MotionEvent.ACTION_MOVE){
+        if(event.getAction()==MotionEvent.ACTION_DOWN){
 
             Intent intent = new Intent(getApplication(), JobActivity.class);
             startActivity(intent);

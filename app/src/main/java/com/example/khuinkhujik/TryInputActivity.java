@@ -65,8 +65,10 @@ public class TryInputActivity extends AppCompatActivity {
 
     public void tryButton(View v){
         if(touchCnt >= question.length - 1){
-            Log.d("input", "end");
-
+            Intent intent = new Intent(getApplication(), TryRecordActivity.class);
+            startActivity(intent);
+            overridePendingTransition(0, 0);
+            TryInputActivity.this.finish();
         }else{
             inputData[touchCnt] = String.valueOf(editAnswer.getText());
             Log.d("input", inputData[touchCnt]);

@@ -44,7 +44,7 @@ public class ShowJobListActivity extends AppCompatActivity {
     }
 
     public boolean onTouchEvent(MotionEvent event) {
-        if(event.getAction()==MotionEvent.ACTION_DOWN || event.getAction()==MotionEvent.ACTION_MOVE){
+        if(event.getAction()==MotionEvent.ACTION_DOWN){
             touchCnt += 1;
             if(touchCnt == 1){
                 introText.setText("총 10개의 직종을 \n보여드리겠습니다");
