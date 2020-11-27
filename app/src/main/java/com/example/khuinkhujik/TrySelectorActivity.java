@@ -22,13 +22,15 @@ public class TrySelectorActivity extends AppCompatActivity {
     }
 
     public void videoButton(View v){
-        Intent intent = new Intent(getApplication(), TryActivity.class);
+        Intent intent = new Intent(getApplication(), ReadyActivity.class);
+        intent.putExtra("tryType","video");
         startActivity(intent);
         overridePendingTransition(0, 0);
         TrySelectorActivity.this.finish();
     }
     public void documentButton(View v){
-        Intent intent = new Intent(getApplication(), TryActivity.class);
+        Intent intent = new Intent(getApplication(), ReadyActivity.class);
+        intent.putExtra("tryType","document");
         startActivity(intent);
         overridePendingTransition(0, 0);
         TrySelectorActivity.this.finish();
