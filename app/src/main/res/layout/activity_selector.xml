@@ -107,7 +107,8 @@
             android:padding="15dp"
             android:text="근무표 작성"
             android:textSize="40sp"
-            android:fontFamily="@font/bmyeonsung"/>
+            android:fontFamily="@font/bmyeonsung"
+            android:onClick="writeWorkSchedule"/>
 
         <Button
             android:id="@+id/button3"
@@ -120,7 +121,8 @@
             android:padding="15dp"
             android:text=" 문의 하기 "
             android:textSize="40sp"
-            android:fontFamily="@font/bmyeonsung"/>
+            android:fontFamily="@font/bmyeonsung"
+            android:onClick="inquire"/>
 
     </RelativeLayout>
 
