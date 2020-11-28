@@ -43,7 +43,10 @@ public class TryRecordActivity extends AppCompatActivity {
             videoView.start();
             builder.setView(videoView);
 
-
+            Intent intent = new Intent(getApplication(), ResultActivity.class);
+            startActivity(intent);
+            overridePendingTransition(0, 0);
+            TryRecordActivity.this.finish();
         }
     }
 }
