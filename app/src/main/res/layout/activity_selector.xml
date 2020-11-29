@@ -118,7 +118,8 @@
             android:padding="15dp"
             android:text="지원서 확인"
             android:textSize="40sp"
-            android:fontFamily="@font/bmyeonsung"/>
+            android:fontFamily="@font/bmyeonsung"
+            android:onClick="checkTry"/>
 
         <Button
             android:id="@+id/button4"

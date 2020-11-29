@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".ResultActivity"></activity>
+        <activity android:name=".CheckTryActivity"></activity>
+        <activity android:name=".ResultActivity" />
         <activity android:name=".Try2Activity" />
         <activity android:name=".TryRecordActivity" />
         <activity android:name=".TryInputActivity" />
@@ -28,11 +29,12 @@
             </intent-filter>
         </activity>
     </application>
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
-    <uses-permission android:name="android.permission.DIAL_PHONE"/>
-
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true" />
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <uses-permission android:name="android.permission.DIAL_PHONE" />
 
 </manifest>

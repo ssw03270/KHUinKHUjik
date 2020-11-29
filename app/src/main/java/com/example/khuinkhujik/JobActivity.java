@@ -3,6 +3,7 @@ package com.example.khuinkhujik;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Debug;
@@ -32,7 +33,6 @@ public class JobActivity extends AppCompatActivity {
         String jobWork = intent.getExtras().getString("jobWork");
         String jobCondition = intent.getExtras().getString("jobCondition");
 
-
         textTitle = findViewById(R.id.textTitle);
         textPay = findViewById(R.id.textPay);
         textDay = findViewById(R.id.textDay);
@@ -46,9 +46,6 @@ public class JobActivity extends AppCompatActivity {
         textTime.setText("근무시간 : " + jobTime);
         textWork.setText("직무내용 : " + jobWork);
         textCondition.setText("경력조건 : " + jobCondition);
-
-
-
     }
 
     public void infoButton(View v){
@@ -61,6 +58,19 @@ public class JobActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void tryButton(View v){
+        SharedPreferences sp = getSharedPreferences("inputData", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+
+        Intent intentFile = getIntent();
+        editor.putString("jobTitle", intentFile.getExtras().getString("jobTitle"));
+        editor.putString("jobPay", intentFile.getExtras().getString("jobPay"));
+        editor.putString("jobDay", intentFile.getExtras().getString("jobDay"));
+        editor.putString("jobTime", intentFile.getExtras().getString("jobTime"));
+        editor.putString("jobWork", intentFile.getExtras().getString("jobWork"));
+        editor.putString("jobCondition", intentFile.getExtras().getString("jobCondition"));
+        editor.putString("jobURL", intentFile.getExtras().getString("jobURL"));
+        editor.apply();
+
         Intent intent = new Intent(getApplication(), TryActivity.class);
         startActivity(intent);
         overridePendingTransition(0, 0);
