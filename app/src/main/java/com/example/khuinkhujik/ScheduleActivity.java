@@ -14,6 +14,11 @@ import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 import com.prolificinteractive.materialcalendarview.OnDateSelectedListener;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.Charset;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -26,13 +31,13 @@ public class ScheduleActivity extends AppCompatActivity {
     Button findJobBtn;
 
     int month_day[]={ 31,28,31,30,31,30,31,31,30,31,30,31 };
-    void IsLeapYear(int year){
+    void IsLeapYear(int year){ //윤년확인
         if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
             month_day[1] = 29;
     }
 
     // 날짜이름
-    int getDayName(int year, int month, int day)
+    int getDayName(int year, int month, int day) //요일 구하는 함수
     {
         int total_day = 0;
 
@@ -80,7 +85,7 @@ public class ScheduleActivity extends AppCompatActivity {
         selectedTextView.setText(date);
         int weekDay = cal.get(Calendar.DAY_OF_WEEK);
         if(weekDay==Calendar.MONDAY ||weekDay==Calendar.WEDNESDAY||weekDay==Calendar.FRIDAY){
-            workdayTextView.setText("은 근무일 입니다.");
+            workdayTextView.setText(readCSVFIle());
         }else{
             workdayTextView.setText("은 근무일이 아닙니다.");
         }
@@ -97,7 +102,7 @@ public class ScheduleActivity extends AppCompatActivity {
                     tempMonth++;
                     yyyymmdd[1] = Integer.toString(tempMonth);
                     if(getDayName(Integer.parseInt(yyyymmdd[0]),Integer.parseInt(yyyymmdd[1]),Integer.parseInt(yyyymmdd[2]))==1){
-                        workdayTextView.setText("은 근무일 입니다.");
+                        workdayTextView.setText(readCSVFIle());
                     }else{
                         workdayTextView.setText(("은 근무일이 아닙니다."));
                     }
@@ -105,12 +110,23 @@ public class ScheduleActivity extends AppCompatActivity {
                     selectedTextView.setText(yyyymmdd[0]+"년 "+yyyymmdd[1]+"월 "+yyyymmdd[2]+"일");
             }
         });
-
-
     }
 
+    private String readCSVFIle(){
+        Intent intent = getIntent();
+        int[] csvFile =  {R.raw.csv1, R.raw.csv2, R.raw.csv3, R.raw.csv4, R.raw.csv5, R.raw.csv6, R.raw.csv7, R.raw.csv8, R.raw.csv9, R.raw.csv10};
 
+        InputStream is = getResources().openRawResource(csvFile[0]);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
+        String line="";
+        try{
+            line=reader.readLine();
+            String[] tokens = line.split(",");
+            return (tokens[3]+"\n금강농자재철강 직원");
 
-
-
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
 }
