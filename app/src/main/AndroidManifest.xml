@@ -19,6 +19,7 @@
         <activity android:name=".JobListActivity" />
         <activity android:name=".ShowJobListActivity" />
         <activity android:name=".SelectorActivity" />
+        <activity android:name=".ScheduleActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,6 +28,8 @@
             </intent-filter>
         </activity>
     </application>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.DIAL_PHONE"/>
 
     <uses-feature
         android:name="android.hardware.camera"
