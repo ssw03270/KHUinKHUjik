@@ -39,7 +39,7 @@ public class SelectorActivity extends AppCompatActivity {
         SelectorActivity.this.finish();
     }
     public void inquire(View  v){
-        startActivity(new Intent("android.intent.action.CALL", Uri.parse(tell)));
+        startActivity(new Intent("android.intent.action.DIAL", Uri.parse(tell)));
     }
     public void checkTry(View v){
         Intent intent = new Intent(getApplicationContext(),CheckTryActivity.class);

@@ -49,10 +49,19 @@
             android:text="입니다." />
 
         <TextView
+            android:id="@+id/selectDayTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:gravity="center"
+            android:fontFamily="@font/bmyeonsung"
+            android:layout_marginTop="50dp"
+            android:text="" />
+
+        <TextView
             android:id="@+id/workDayTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
             android:textSize="30sp"
             android:gravity="center"
             android:fontFamily="@font/bmyeonsung"
