@@ -77,7 +77,12 @@ public class TryInputActivity extends AppCompatActivity {
             textQuestion.setText(question[touchCnt]);
             tts.speak(textQuestion.getText().toString(),TextToSpeech.QUEUE_FLUSH, null);
         }
-
-
+    }
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(getApplicationContext(),JobListActivity.class);
+        startActivity(intent);
+        overridePendingTransition(0, 0);
+        TryInputActivity.this.finish();
     }
 }

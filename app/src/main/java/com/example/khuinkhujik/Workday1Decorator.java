@@ -1,5 +1,6 @@
 package com.example.khuinkhujik;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.text.style.ForegroundColorSpan;
@@ -32,4 +33,5 @@ class Workday1Decorator implements DayViewDecorator {
         view.addSpan(new RelativeSizeSpan(1.4f));
         view.addSpan(new DotSpan(5,Color.RED));
     }
+
 }

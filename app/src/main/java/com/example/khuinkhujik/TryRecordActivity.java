@@ -49,4 +49,11 @@ public class TryRecordActivity extends AppCompatActivity {
             TryRecordActivity.this.finish();
         }
     }
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(getApplicationContext(),JobListActivity.class);
+        startActivity(intent);
+        overridePendingTransition(0, 0);
+        TryRecordActivity.this.finish();
+    }
 }

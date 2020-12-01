@@ -123,4 +123,12 @@ public class JobListActivity extends AppCompatActivity {
         overridePendingTransition(0, 0);
         JobListActivity.this.finish();
     }
+
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(getApplicationContext(),SelectorActivity.class);
+        startActivity(intent);
+        overridePendingTransition(0, 0);
+        JobListActivity.this.finish();
+    }
 }

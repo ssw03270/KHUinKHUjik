@@ -151,5 +151,11 @@ public class ShowJobActivity extends AppCompatActivity {
         }
         return true;
     }
-
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(getApplicationContext(),JobListActivity.class);
+        startActivity(intent);
+        overridePendingTransition(0, 0);
+        ShowJobActivity.this.finish();
+    }
 }

@@ -73,4 +73,11 @@ public class TryActivity extends AppCompatActivity {
             tts = null;
         }
     }
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(getApplicationContext(),JobListActivity.class);
+        startActivity(intent);
+        overridePendingTransition(0, 0);
+        TryActivity.this.finish();
+    }
 }

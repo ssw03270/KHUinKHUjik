@@ -129,4 +129,11 @@ public class ScheduleActivity extends AppCompatActivity {
         }
         return "";
     }
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(getApplicationContext(),SelectorActivity.class);
+        startActivity(intent);
+        overridePendingTransition(0, 0);
+        ScheduleActivity.this.finish();
+    }
 }

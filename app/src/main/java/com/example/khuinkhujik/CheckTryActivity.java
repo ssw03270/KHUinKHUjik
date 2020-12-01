@@ -54,4 +54,12 @@ public class CheckTryActivity extends AppCompatActivity {
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
     }
+
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(getApplicationContext(),SelectorActivity.class);
+        startActivity(intent);
+        overridePendingTransition(0, 0);
+        CheckTryActivity.this.finish();
+    }
 }
