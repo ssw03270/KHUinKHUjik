@@ -40,6 +40,7 @@ public class JobListActivity extends AppCompatActivity {
     public void firstButton(View v){
         Intent intent = new Intent(getApplicationContext(),ShowJobActivity.class);
         intent.putExtra("jobNumber",1);
+        intent.putExtra("jobCategory",button1.getText());
         startActivity(intent);
         overridePendingTransition(0, 0);
         JobListActivity.this.finish();
@@ -48,6 +49,7 @@ public class JobListActivity extends AppCompatActivity {
 
         Intent intent = new Intent(getApplicationContext(),ShowJobActivity.class);
         intent.putExtra("jobNumber",2);
+        intent.putExtra("jobCategory",button2.getText());
         startActivity(intent);
         overridePendingTransition(0, 0);
         JobListActivity.this.finish();
@@ -57,6 +59,7 @@ public class JobListActivity extends AppCompatActivity {
 
         Intent intent = new Intent(getApplicationContext(),ShowJobActivity.class);
         intent.putExtra("jobNumber",3);
+        intent.putExtra("jobCategory",button3.getText());
         startActivity(intent);
         overridePendingTransition(0, 0);
         JobListActivity.this.finish();
@@ -66,6 +69,7 @@ public class JobListActivity extends AppCompatActivity {
 
         Intent intent = new Intent(getApplicationContext(),ShowJobActivity.class);
         intent.putExtra("jobNumber",4);
+        intent.putExtra("jobCategory",button4.getText());
         startActivity(intent);
         overridePendingTransition(0, 0);
         JobListActivity.this.finish();
@@ -75,6 +79,7 @@ public class JobListActivity extends AppCompatActivity {
 
         Intent intent = new Intent(getApplicationContext(),ShowJobActivity.class);
         intent.putExtra("jobNumber",5);
+        intent.putExtra("jobCategory",button5.getText());
         startActivity(intent);
         overridePendingTransition(0, 0);
         JobListActivity.this.finish();
@@ -84,6 +89,7 @@ public class JobListActivity extends AppCompatActivity {
 
         Intent intent = new Intent(getApplicationContext(),ShowJobActivity.class);
         intent.putExtra("jobNumber",6);
+        intent.putExtra("jobCategory",button6.getText());
         startActivity(intent);
         overridePendingTransition(0, 0);
         JobListActivity.this.finish();
@@ -93,6 +99,7 @@ public class JobListActivity extends AppCompatActivity {
 
         Intent intent = new Intent(getApplicationContext(),ShowJobActivity.class);
         intent.putExtra("jobNumber",7);
+        intent.putExtra("jobCategory",button7.getText());
         startActivity(intent);
         overridePendingTransition(0, 0);
         JobListActivity.this.finish();
@@ -102,6 +109,7 @@ public class JobListActivity extends AppCompatActivity {
 
         Intent intent = new Intent(getApplicationContext(),ShowJobActivity.class);
         intent.putExtra("jobNumber",8);
+        intent.putExtra("jobCategory",button8.getText());
         startActivity(intent);
         overridePendingTransition(0, 0);
         JobListActivity.this.finish();
@@ -111,6 +119,7 @@ public class JobListActivity extends AppCompatActivity {
 
         Intent intent = new Intent(getApplicationContext(),ShowJobActivity.class);
         intent.putExtra("jobNumber",9);
+        intent.putExtra("jobCategory",button9.getText());
         startActivity(intent);
         overridePendingTransition(0, 0);
         JobListActivity.this.finish();
@@ -119,6 +128,7 @@ public class JobListActivity extends AppCompatActivity {
 
         Intent intent = new Intent(getApplicationContext(),ShowJobActivity.class);
         intent.putExtra("jobNumber",10);
+        intent.putExtra("jobCategory",button10.getText());
         startActivity(intent);
         overridePendingTransition(0, 0);
         JobListActivity.this.finish();

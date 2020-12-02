@@ -47,13 +47,13 @@ public class Try2Activity extends AppCompatActivity {
         if(event.getAction()==MotionEvent.ACTION_DOWN){
             touchCnt += 1;
             if(touchCnt == 1){
-                introText.setText("이제 영상 녹화를 진행하도록 하겠습니다");
+                introText.setText("이제 영상 녹화를 \n 진행하도록 하겠습니다");
                 tts.speak(introText.getText().toString(),TextToSpeech.QUEUE_FLUSH, null);
             }else if(touchCnt == 2){
                 introText.setText("준비가 되셨다면 화면을 클릭하시고 \n 준비하신 발표 진행하시면 됩니다");
                 tts.speak(introText.getText().toString(),TextToSpeech.QUEUE_FLUSH, null);
             }else if(touchCnt == 3){
-                introText.setText("좋은 결과 있으시길 바랍니다");
+                introText.setText("좋은 결과 있으시길 \n 바랍니다");
                 tts.speak(introText.getText().toString(),TextToSpeech.QUEUE_FLUSH, null);
             }else{
                 Intent intent = new Intent(getApplication(), TryRecordActivity.class);

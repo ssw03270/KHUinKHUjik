@@ -48,7 +48,7 @@ public class TryActivity extends AppCompatActivity {
         if(event.getAction()==MotionEvent.ACTION_DOWN){
             touchCnt += 1;
             if(touchCnt == 1){
-                introText.setText("우선 이력서 작성을 도와드리겠습니다");
+                introText.setText("우선 이력서 작성을 \n 도와드리겠습니다");
                 tts.speak(introText.getText().toString(),TextToSpeech.QUEUE_FLUSH, null);
             }else if(touchCnt == 2){
                 introText.setText("화면에 나타나는 질문에 응답하시면 \n 저절로 이력서가 작성됩니다");

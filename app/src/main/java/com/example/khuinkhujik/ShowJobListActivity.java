@@ -50,7 +50,7 @@ public class ShowJobListActivity extends AppCompatActivity {
                 introText.setText("총 10개의 직종을 \n보여드리겠습니다");
                 tts.speak(introText.getText().toString(),TextToSpeech.QUEUE_FLUSH, null);
             }else if(touchCnt == 2){
-                introText.setText("원하시는 직종을 골라주세요");
+                introText.setText("원하시는 직종을 \n골라주세요");
                 tts.speak(introText.getText().toString(),TextToSpeech.QUEUE_FLUSH, null);
             }else{
                 Intent intent = new Intent(getApplication(), JobListActivity.class);

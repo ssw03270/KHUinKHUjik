@@ -5,135 +5,93 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SelectorActivity">
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#ECEDEA">
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:gravity="center"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:textColor="#505050"
-            android:fontFamily="@font/bmyeonsung"
-            android:text="쿠인쿠직"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        android:src="@drawable/background"
+        android:scaleType="centerCrop"/>
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="300dp"
-            android:layout_below="@+id/textView3"
-            android:layout_marginTop="50dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/mascotimsi" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/imageView"
-            android:layout_marginTop="50dp"
-            android:gravity="center"
-            android:textSize="25sp"
-            android:fontFamily="@font/bmyeonsung"
-            android:textStyle="bold"
-            android:textColor="#505050"
-            android:text="그럼 같이 좋은 일자리를 \n 찾으러 가볼까요?"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textView"
-            android:layout_marginTop="15dp"
-            android:gravity="center"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#505050"
-            android:fontFamily="@font/bmyeonsung"
-            android:text="화면을 눌러주세요"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </RelativeLayout>
-
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#CCECEDEA">
-    </RelativeLayout>
+        android:gravity="center"
+        android:orientation="horizontal">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#00ECEDEA"
-        android:gravity="center">
-
-        <Button
-            android:id="@+id/button"
-            android:background="@drawable/box"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/button2"
-            android:layout_marginBottom="50dp"
-            android:padding="15dp"
-            android:text="일자리 찾기"
-            android:textSize="40sp"
-            android:fontFamily="@font/bmyeonsung"
-            android:onClick="findJob"/>
+            android:layout_weight="0.35" />
 
-        <Button
-            android:id="@+id/button2"
-            android:background="@drawable/box"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="15dp"
-            android:text="근무표 작성"
-            android:textSize="40sp"
-            android:fontFamily="@font/bmyeonsung"
-            android:onClick="writeWorkSchedule"/>
+            android:layout_weight="0.3"
+            android:gravity="center"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/button3"
-            android:background="@drawable/box"
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/box_type1"
+                android:fontFamily="@font/notosans"
+                android:onClick="findJob"
+                android:paddingLeft="20dp"
+                android:paddingVertical="10dp"
+                android:text="일자리 찾기"
+                android:textColor="#ffffff"
+                android:textSize="32sp"
+                android:drawableLeft="@drawable/glass"/>
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/box_type2"
+                android:fontFamily="@font/notosans"
+                android:onClick="writeWorkSchedule"
+                android:paddingLeft="20dp"
+                android:paddingVertical="10dp"
+                android:text="근무표 작성"
+                android:textSize="32sp"
+                android:drawableLeft="@drawable/calander"/>
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/box_type2"
+                android:fontFamily="@font/notosans"
+                android:onClick="checkTry"
+                android:paddingLeft="20dp"
+                android:paddingVertical="10dp"
+                android:text="지원서 확인"
+                android:textSize="32sp"
+                android:drawableLeft="@drawable/pencil"/>
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/box_type3"
+                android:fontFamily="@font/notosans"
+                android:onClick="inquire"
+                android:paddingLeft="20dp"
+                android:paddingVertical="10dp"
+                android:text=" 문의 하기 "
+                android:textSize="32sp"
+                android:drawableLeft="@drawable/man"/>
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/button2"
-            android:layout_marginTop="50dp"
-            android:padding="15dp"
-            android:text="지원서 확인"
-            android:textSize="40sp"
-            android:fontFamily="@font/bmyeonsung"
-            android:onClick="checkTry"/>
+            android:layout_weight="0.35" />
 
-        <Button
-            android:id="@+id/button4"
-            android:background="@drawable/box"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/button3"
-            android:layout_marginTop="50dp"
-            android:padding="15dp"
-            android:text=" 문의 하기 "
-            android:textSize="40sp"
-            android:fontFamily="@font/bmyeonsung"
-            android:onClick="inquire"/>
-
-    </RelativeLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

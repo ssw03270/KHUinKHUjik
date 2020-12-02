@@ -19,9 +19,8 @@
         <activity android:name=".ShowJobActivity" />
         <activity android:name=".JobListActivity" />
         <activity android:name=".ShowJobListActivity" />
-        <activity android:name=".SelectorActivity" />
         <activity android:name=".ScheduleActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".SelectorActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

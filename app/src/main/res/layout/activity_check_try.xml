@@ -6,220 +6,178 @@
     android:layout_height="match_parent"
     tools:context=".CheckTryActivity">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#ECEDEA">
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:gravity="center"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:textColor="#505050"
-            android:fontFamily="@font/bmyeonsung"
-            android:text="쿠인쿠직"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="300dp"
-            android:layout_below="@+id/textView3"
-            android:layout_marginTop="50dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/mascotimsi" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/imageView"
-            android:layout_marginTop="50dp"
-            android:gravity="center"
-            android:textSize="25sp"
-            android:fontFamily="@font/bmyeonsung"
-            android:textStyle="bold"
-            android:textColor="#505050"
-            android:text="그럼 같이 좋은 일자리를 \n 찾으러 가볼까요?"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textView"
-            android:layout_marginTop="15dp"
-            android:gravity="center"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#505050"
-            android:fontFamily="@font/bmyeonsung"
-            android:text="화면을 눌러주세요"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </RelativeLayout>
-
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#CCECEDEA">
-    </RelativeLayout>
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true">
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/linearLayout"
-            android:layout_width="350dp"
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#00ECEDEA"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_horizontal"
-            android:orientation="vertical">
-            <TextView
-                android:id="@+id/textTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="jobTitle"
-                android:textStyle="bold"
-                android:textColor="#505050"
-                android:textSize="50dp"
-                android:fontFamily="@font/bmyeonsung"
-                android:gravity="center_horizontal"
-                android:layout_marginTop="50dp"/>
+            android:gravity="center"
+            android:background="#F8F8F8"
+            android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/box"
-                android:layout_marginTop="50dp"
+                android:layout_weight="0.35" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:gravity="center"
                 android:orientation="vertical">
+
                 <TextView
-                    android:id="@+id/textInfo"
+                    android:id="@+id/textTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="기본정보"
+                    android:text="jobTitle"
                     android:textStyle="bold"
-                    android:textColor="#505050"
-                    android:textSize="30dp"
-                    android:fontFamily="@font/bmyeonsung"
+                    android:textColor="#000000"
+                    android:textSize="50dp"
+                    android:fontFamily="@font/notosans"
                     android:gravity="center_horizontal"
-                    android:layout_marginTop="25dp"/>
+                    android:layout_marginTop="50dp"/>
 
                 <LinearLayout
-                    android:layout_width="300dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/box_type2"
+                    android:layout_marginTop="50dp"
                     android:orientation="vertical">
-
                     <TextView
-                        android:id="@+id/textPay"
+                        android:id="@+id/textInfo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="임금 : pay"
-                        android:textStyle="bold"
-                        android:textColor="#505050"
-                        android:textSize="20dp"
-                        android:fontFamily="@font/bmyeonsung"
-                        android:layout_marginTop="20dp"/>
+                        android:text="기본정보"
+                        android:textColor="#000000"
+                        android:textSize="30dp"
+                        android:fontFamily="@font/notosans"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="25dp"/>
 
-                    <TextView
-                        android:id="@+id/textDay"
-                        android:layout_width="match_parent"
+                    <LinearLayout
+                        android:layout_width="300dp"
                         android:layout_height="wrap_content"
-                        android:text="근무형태 : day"
-                        android:textStyle="bold"
-                        android:textColor="#505050"
-                        android:textSize="20dp"
-                        android:fontFamily="@font/bmyeonsung"
-                        android:layout_marginTop="15dp"/>
+                        android:layout_gravity="center_horizontal"
+                        android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/textTime"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="근무시간 : time"
-                        android:textStyle="bold"
-                        android:textColor="#505050"
-                        android:textSize="20dp"
-                        android:fontFamily="@font/bmyeonsung"
-                        android:layout_marginTop="15dp"/>
+                        <TextView
+                            android:id="@+id/textPay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="임금 : pay"
+                            android:textColor="#000000"
+                            android:textSize="20dp"
+                            android:fontFamily="@font/notosans"
+                            android:layout_marginTop="20dp"/>
 
-                    <TextView
-                        android:id="@+id/textWork"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="직무내용 : work"
-                        android:textStyle="bold"
-                        android:textColor="#505050"
-                        android:textSize="20dp"
-                        android:fontFamily="@font/bmyeonsung"
-                        android:layout_marginTop="15dp"/>
+                        <TextView
+                            android:id="@+id/textDay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="근무형태 : day"
+                            android:textColor="#000000"
+                            android:textSize="20dp"
+                            android:fontFamily="@font/notosans"
+                            android:layout_marginTop="15dp"/>
 
-                    <TextView
-                        android:id="@+id/textCondition"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="경력조건 : condition"
-                        android:textStyle="bold"
-                        android:textColor="#505050"
-                        android:textSize="20dp"
-                        android:fontFamily="@font/bmyeonsung"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginBottom="25dp"/>
+                        <TextView
+                            android:id="@+id/textTime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="근무시간 : time"
+                            android:textColor="#000000"
+                            android:textSize="20dp"
+                            android:fontFamily="@font/notosans"
+                            android:layout_marginTop="15dp"/>
+
+                        <TextView
+                            android:id="@+id/textWork"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="직무내용 : work"
+                            android:textColor="#000000"
+                            android:textSize="20dp"
+                            android:fontFamily="@font/notosans"
+                            android:layout_marginTop="15dp"/>
+
+                        <TextView
+                            android:id="@+id/textCondition"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="경력조건 : condition"
+                            android:textColor="#000000"
+                            android:textSize="20dp"
+                            android:fontFamily="@font/notosans"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="25dp"/>
+                    </LinearLayout>
                 </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginBottom="50dp">
+                    <Button
+                        android:id="@+id/buttonInfo"
+                        android:background="@drawable/box_type2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="15dp"
+                        android:text="상세정보"
+                        android:textSize="40sp"
+                        android:fontFamily="@font/notosans"
+                        android:onClick="infoButton"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"/>
+
+                    <Button
+                        android:id="@+id/buttonTry"
+                        android:background="@drawable/box_type2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="15dp"
+                        android:text="지원완료"
+                        android:textSize="40sp"
+                        android:fontFamily="@font/notosans"/>
+                </LinearLayout>
+
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="50dp">
-                <Button
-                    android:id="@+id/buttonInfo"
-                    android:background="@drawable/box"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:padding="15dp"
-                    android:text="상세정보"
-                    android:textSize="40sp"
-                    android:fontFamily="@font/bmyeonsung"
-                    android:onClick="infoButton"/>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"/>
-
-                <Button
-                    android:id="@+id/buttonTry"
-                    android:background="@drawable/box"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:padding="15dp"
-                    android:text="지원완료"
-                    android:textSize="40sp"
-                    android:fontFamily="@font/bmyeonsung"/>
-            </LinearLayout>
+                android:layout_weight="0.35" />
 
         </LinearLayout>
+
     </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/box_type1_2"
+            android:text="지원 정보 확인"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:fontFamily="@font/notosans"/>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

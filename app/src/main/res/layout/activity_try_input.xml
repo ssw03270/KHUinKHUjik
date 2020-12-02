@@ -5,116 +5,70 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TryInputActivity">
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#ECEDEA">
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:gravity="center"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:textColor="#505050"
-            android:fontFamily="@font/bmyeonsung"
-            android:text="쿠인쿠직"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_marginTop="100dp"
-            android:layout_below="@+id/textView3"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/mascotimsi" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/imageView"
-            android:layout_marginTop="50dp"
-            android:gravity="center"
-            android:textSize="25sp"
-            android:fontFamily="@font/bmyeonsung"
-            android:textStyle="bold"
-            android:textColor="#505050"
-            android:text="화면에 나타나는 질문에 응답하시면 \n 저절로 이력서가 작성됩니다"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textView"
-            android:layout_marginTop="15dp"
-            android:gravity="center"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#505050"
-            android:fontFamily="@font/bmyeonsung"
-            android:text="화면을 눌러주세요"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </RelativeLayout>
-
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#CCECEDEA">
-    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center_horizontal">
-
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/linearLayout"
-            android:layout_width="350dp"
-            android:layout_height="match_parent"
-            android:background="#00ECEDEA"
-            android:orientation="vertical">\
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/box_type1_2"
                 android:text="이력서 작성"
-                android:textStyle="bold"
-                android:textColor="#505050"
-                android:textSize="50dp"
-                android:fontFamily="@font/bmyeonsung"
-                android:gravity="center_horizontal"
-                android:layout_marginTop="50dp"/>
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:padding="10dp"
+                android:fontFamily="@font/notosans"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_weight="0.3"
+                    android:background="@android:color/darker_gray"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_weight="0.7"
+                    android:background="@android:color/white"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="300dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
+                android:layout_weight="0.3" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4"
+                android:gravity="center"
                 android:orientation="vertical">
                 <TextView
                     android:id="@+id/textQuestion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="성함이 어떻게 되시나요?"
-                    android:textStyle="bold"
-                    android:textColor="#505050"
+                    android:textColor="#000000"
                     android:textSize="20dp"
-                    android:fontFamily="@font/bmyeonsung"
+                    android:fontFamily="@font/notosans"
                     android:layout_marginTop="20dp"/>
 
                 <EditText
@@ -124,13 +78,12 @@
                     android:layout_height="wrap_content"
                     android:padding="10dp"
                     android:layout_marginTop="20dp"
-                    android:textStyle="bold"
-                    android:textColor="#505050"
-                    android:background="@drawable/box"/>
+                    android:textColor="#000000"
+                    android:background="@drawable/box_type2"/>
 
                 <Button
                     android:id="@+id/buttonTry"
-                    android:background="@drawable/box"
+                    android:background="@drawable/box_type2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="15dp"
@@ -138,13 +91,17 @@
                     android:layout_gravity="center_horizontal"
                     android:text="다음으로"
                     android:textSize="40sp"
-                    android:textStyle="bold"
-                    android:textColor="#505050"
-                    android:fontFamily="@font/bmyeonsung"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/notosans"
                     android:onClick="tryButton"/>
             </LinearLayout>
 
-
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3" />
         </LinearLayout>
+
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
