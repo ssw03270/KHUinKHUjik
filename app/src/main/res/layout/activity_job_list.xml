@@ -64,12 +64,13 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="20dp"
-                    android:padding="15dp"
                     android:text="경영ㆍ사무ㆍ금융ㆍ보험"
                     android:textSize="26sp"
                     android:fontFamily="@font/notosans"
                     android:onClick="firstButton"
-                    android:drawableLeft="@drawable/job10"/>
+                    android:paddingLeft="30dp"
+                    android:paddingVertical="15dp"
+                    android:drawableLeft="@drawable/job1"/>
 
                 <Button
                     android:id="@+id/button2"
@@ -79,11 +80,13 @@
                     android:layout_centerHorizontal="true"
                     android:layout_below="@id/button"
                     android:layout_marginTop="20dp"
-                    android:padding="15dp"
                     android:text="연구 및 공학기술"
                     android:textSize="26sp"
                     android:fontFamily="@font/notosans"
-                    android:onClick="secondButton"/>
+                    android:onClick="secondButton"
+                    android:paddingLeft="30dp"
+                    android:paddingVertical="15dp"
+                    android:drawableLeft="@drawable/job2"/>
 
                 <Button
                     android:id="@+id/button3"
@@ -93,11 +96,13 @@
                     android:layout_centerHorizontal="true"
                     android:layout_below="@id/button2"
                     android:layout_marginTop="20dp"
-                    android:padding="15dp"
                     android:text="교육ㆍ법률ㆍ경찰ㆍ소방"
                     android:textSize="26sp"
                     android:fontFamily="@font/notosans"
-                    android:onClick="thirdButton"/>
+                    android:onClick="thirdButton"
+                    android:paddingLeft="30dp"
+                    android:paddingVertical="15dp"
+                    android:drawableLeft="@drawable/job3"/>
 
                 <Button
                     android:id="@+id/button4"
@@ -107,11 +112,13 @@
                     android:layout_centerHorizontal="true"
                     android:layout_below="@id/button3"
                     android:layout_marginTop="20dp"
-                    android:padding="15dp"
                     android:text="보건ㆍ의료"
                     android:textSize="26sp"
                     android:fontFamily="@font/notosans"
-                    android:onClick="fourthButton"/>
+                    android:onClick="fourthButton"
+                    android:paddingLeft="30dp"
+                    android:paddingVertical="15dp"
+                    android:drawableLeft="@drawable/job4"/>
 
                 <Button
                     android:id="@+id/button5"
@@ -121,11 +128,13 @@
                     android:layout_centerHorizontal="true"
                     android:layout_below="@id/button4"
                     android:layout_marginTop="20dp"
-                    android:padding="15dp"
                     android:text="예술ㆍ방송ㆍ스포츠"
                     android:textSize="26sp"
                     android:fontFamily="@font/notosans"
-                    android:onClick="fifthButton"/>
+                    android:onClick="fifthButton"
+                    android:paddingLeft="30dp"
+                    android:paddingVertical="15dp"
+                    android:drawableLeft="@drawable/job5"/>
 
                 <Button
                     android:id="@+id/button6"
@@ -135,11 +144,13 @@
                     android:layout_centerHorizontal="true"
                     android:layout_below="@id/button5"
                     android:layout_marginTop="20dp"
-                    android:padding="15dp"
                     android:text="미용ㆍ음식ㆍ경비ㆍ돌봄"
                     android:textSize="26sp"
                     android:fontFamily="@font/notosans"
-                    android:onClick="sixthButton"/>
+                    android:onClick="sixthButton"
+                    android:paddingLeft="30dp"
+                    android:paddingVertical="15dp"
+                    android:drawableLeft="@drawable/job6"/>
 
                 <Button
                     android:id="@+id/button7"
@@ -149,11 +160,13 @@
                     android:layout_centerHorizontal="true"
                     android:layout_below="@id/button6"
                     android:layout_marginTop="20dp"
-                    android:padding="15dp"
                     android:text="영업ㆍ판매ㆍ운전ㆍ운송"
                     android:textSize="26sp"
                     android:fontFamily="@font/notosans"
-                    android:onClick="seventhButton"/>
+                    android:onClick="seventhButton"
+                    android:paddingLeft="30dp"
+                    android:paddingVertical="15dp"
+                    android:drawableLeft="@drawable/job7"/>
 
                 <Button
                     android:id="@+id/button8"
@@ -163,11 +176,13 @@
                     android:layout_centerHorizontal="true"
                     android:layout_below="@id/button7"
                     android:layout_marginTop="20dp"
-                    android:padding="15dp"
                     android:text="건설ㆍ채굴"
                     android:textSize="26sp"
                     android:fontFamily="@font/notosans"
-                    android:onClick="eighthButton"/>
+                    android:onClick="eighthButton"
+                    android:paddingLeft="30dp"
+                    android:paddingVertical="15dp"
+                    android:drawableLeft="@drawable/job8"/>
 
                 <Button
                     android:id="@+id/button9"
@@ -177,11 +192,13 @@
                     android:layout_centerHorizontal="true"
                     android:layout_below="@id/button8"
                     android:layout_marginTop="20dp"
-                    android:padding="15dp"
                     android:text="설치ㆍ정비ㆍ생산"
                     android:textSize="26sp"
                     android:fontFamily="@font/notosans"
-                    android:onClick="ninthButton"/>
+                    android:onClick="ninthButton"
+                    android:paddingLeft="30dp"
+                    android:paddingVertical="15dp"
+                    android:drawableLeft="@drawable/job9"/>
 
                 <Button
                     android:id="@+id/button10"
@@ -191,11 +208,13 @@
                     android:layout_centerHorizontal="true"
                     android:layout_below="@id/button9"
                     android:layout_marginTop="20dp"
-                    android:padding="15dp"
                     android:text="농림어업직"
                     android:textSize="26sp"
                     android:fontFamily="@font/notosans"
-                    android:onClick="tenthButton"/>
+                    android:onClick="tenthButton"
+                    android:paddingLeft="30dp"
+                    android:paddingVertical="15dp"
+                    android:drawableLeft="@drawable/job10"/>
             </LinearLayout>
         </ScrollView>
 

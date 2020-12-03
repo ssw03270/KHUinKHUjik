@@ -5,70 +5,105 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".JobActivity">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:fontFamily="@font/notosans"
-        tools:layout_editor_absoluteX="149dp"
-        tools:layout_editor_absoluteY="151dp">
+        android:orientation="vertical">
 
-        <com.prolificinteractive.materialcalendarview.MaterialCalendarView
-            android:id="@+id/materialCalendarView"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            app:mcv_showOtherDates="defaults"/>
-
-        <TextView
-            android:id="@+id/textView9"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:gravity="center"
-            android:textColor="#000000"
-            android:fontFamily="@font/notosans"
-            android:text="오늘은" />
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/todayTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="50dp"
-            android:gravity="center"
-            android:textColor="#000000"
-            android:fontFamily="@font/notosans"
-            android:text="0000/00/00" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/box_type1_2"
+                android:text="근무표"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:padding="10dp"
+                android:fontFamily="@font/notosans"/>
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/textView11"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:gravity="center"
-            android:textColor="#000000"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
             android:fontFamily="@font/notosans"
-            android:text="입니다." />
+            android:layout_marginTop="30dp">
 
-        <TextView
-            android:id="@+id/selectDayTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:gravity="center"
-            android:textColor="#000000"
-            android:fontFamily="@font/notosans"
-            android:layout_marginTop="50dp"
-            android:text="" />
+            <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+                android:id="@+id/materialCalendarView"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                app:mcv_showOtherDates="defaults"/>
 
-        <TextView
-            android:id="@+id/workDayTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:gravity="center"
-            android:textColor="#000000"
-            android:fontFamily="@font/notosans"
-            android:text="근무일입니다." />
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:fillViewport="true">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="30sp"
+                        android:gravity="center"
+                        android:textColor="#000000"
+                        android:fontFamily="@font/notosans"
+                        android:text="오늘은" />
+
+                    <TextView
+                        android:id="@+id/todayTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="40dp"
+                        android:gravity="center"
+                        android:textColor="#000000"
+                        android:fontFamily="@font/notosans"
+                        android:text="0000/00/00" />
+
+                    <TextView
+                        android:id="@+id/textView11"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="30sp"
+                        android:gravity="center"
+                        android:textColor="#000000"
+                        android:fontFamily="@font/notosans"
+                        android:text="입니다." />
+
+                    <TextView
+                        android:id="@+id/selectDayTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="30sp"
+                        android:gravity="center"
+                        android:textColor="#000000"
+                        android:fontFamily="@font/notosans"
+                        android:layout_marginTop="50dp"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/workDayTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="30sp"
+                        android:gravity="center"
+                        android:textColor="#000000"
+                        android:fontFamily="@font/notosans"
+                        android:text="근무일입니다." />
+                </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
