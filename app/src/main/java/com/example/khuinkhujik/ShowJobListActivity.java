@@ -3,10 +3,13 @@ package com.example.khuinkhujik;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
 import android.view.MotionEvent;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.util.Locale;
@@ -33,12 +36,25 @@ public class ShowJobListActivity extends AppCompatActivity {
             }
         });
 
+
+        SharedPreferences sp = getSharedPreferences("inputData", MODE_PRIVATE);
+        ImageButton micButton = (ImageButton)findViewById(R.id.micButton);
+        if(sp.getBoolean("micOn", true)){
+            micButton.setImageResource(R.drawable.mic);
+        }else if(!sp.getBoolean("micOn", true)){
+            micButton.setImageResource(R.drawable.micoff);
+        }
+
         introText = findViewById(R.id.textView);
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                tts.speak(introText.getText().toString(),TextToSpeech.QUEUE_FLUSH, null);
+                SharedPreferences sp = getSharedPreferences("inputData", MODE_PRIVATE);
+                if(sp.getBoolean("micOn", true)) {
+                    tts.speak(introText.getText().toString(),TextToSpeech.QUEUE_FLUSH, null);
+                }
+                
             }
         }, 1000);
     }
@@ -48,10 +64,16 @@ public class ShowJobListActivity extends AppCompatActivity {
             touchCnt += 1;
             if(touchCnt == 1){
                 introText.setText("총 10개의 직종을 \n보여드리겠습니다");
-                tts.speak(introText.getText().toString(),TextToSpeech.QUEUE_FLUSH, null);
+                SharedPreferences sp = getSharedPreferences("inputData", MODE_PRIVATE);
+                if(sp.getBoolean("micOn", true)) {
+                    tts.speak(introText.getText().toString(),TextToSpeech.QUEUE_FLUSH, null);
+                }
             }else if(touchCnt == 2){
                 introText.setText("원하시는 직종을 \n골라주세요");
-                tts.speak(introText.getText().toString(),TextToSpeech.QUEUE_FLUSH, null);
+                SharedPreferences sp = getSharedPreferences("inputData", MODE_PRIVATE);
+                if(sp.getBoolean("micOn", true)) {
+                    tts.speak(introText.getText().toString(),TextToSpeech.QUEUE_FLUSH, null);
+                }
             }else{
                 Intent intent = new Intent(getApplication(), JobListActivity.class);
                 startActivity(intent);
@@ -77,5 +99,25 @@ public class ShowJobListActivity extends AppCompatActivity {
         startActivity(intent);
         overridePendingTransition(0, 0);
         ShowJobListActivity.this.finish();
+    }
+
+    public void controlMic(View v){
+        ImageButton micButton = (ImageButton)findViewById(R.id.micButton);
+
+        SharedPreferences sp = getSharedPreferences("inputData", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+
+        if(sp.getBoolean("micOn", true)){
+            micButton.setImageResource(R.drawable.micoff);
+            tts.stop();
+            Intent intentFile = getIntent();
+            editor.putBoolean("micOn", false);
+            editor.apply();
+        }else if(!sp.getBoolean("micOn", true)){
+            micButton.setImageResource(R.drawable.mic);
+            Intent intentFile = getIntent();
+            editor.putBoolean("micOn", true);
+            editor.apply();
+        }
     }
 }
