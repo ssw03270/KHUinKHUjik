@@ -1,7 +1,10 @@
 package com.example.khuinkhujik;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
@@ -10,6 +13,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 import com.prolificinteractive.materialcalendarview.OnDateSelectedListener;
@@ -29,6 +33,7 @@ public class ScheduleActivity extends AppCompatActivity {
     String DATE;
 
     Button findJobBtn;
+    BottomNavigationView bottomNavigation;
 
     int month_day[]={ 31,28,31,30,31,30,31,31,30,31,30,31 };
     void IsLeapYear(int year){ //윤년확인
@@ -65,6 +70,12 @@ public class ScheduleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedule);
+
+        bottomNavigation = findViewById(R.id.bottomNavigationView);
+        bottomNavigation.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
+        Menu menu = bottomNavigation.getMenu();
+        MenuItem menuItem = menu.getItem(2);
+        menuItem.setChecked(true);
 
         MaterialCalendarView materialCalendarView = findViewById(R.id.materialCalendarView);
         materialCalendarView.addDecorators(
@@ -110,6 +121,8 @@ public class ScheduleActivity extends AppCompatActivity {
                     selectedTextView.setText(yyyymmdd[0]+"년 "+yyyymmdd[1]+"월 "+yyyymmdd[2]+"일");
             }
         });
+
+
     }
 
     private String readCSVFIle(){
@@ -136,4 +149,27 @@ public class ScheduleActivity extends AppCompatActivity {
         overridePendingTransition(0, 0);
         ScheduleActivity.this.finish();
     }
+    BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                    Intent intent;
+                    switch (item.getItemId()) {
+                        case R.id.person:
+                            intent = new Intent(getApplicationContext(),JobListActivity.class);
+                            startActivity(intent);
+                            break;
+                        case R.id.home:
+                            intent = new Intent(getApplicationContext(),SelectorActivity.class);
+                            startActivity(intent);
+                            break;
+                        case R.id.calander:
+                            intent = new Intent(getApplicationContext(),ScheduleActivity.class);
+                            startActivity(intent);
+                            break;
+                    }
+                    overridePendingTransition(0, 0);
+                    ScheduleActivity.this.finish();
+                    return false;
+                }
+            };
 }

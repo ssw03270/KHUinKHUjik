@@ -208,7 +208,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_below="@id/button9"
                     android:layout_marginTop="20dp"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginBottom="100dp"
                     android:text="농림어업직"
                     android:textSize="26sp"
                     android:fontFamily="@font/notosans"

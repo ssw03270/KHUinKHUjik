@@ -1,5 +1,6 @@
 package com.example.khuinkhujik;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -8,12 +9,15 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.Locale;
 
@@ -28,6 +32,7 @@ public class TryInputActivity extends AppCompatActivity {
     TextView textQuestion;
     EditText editAnswer;
     Button buttonTry;
+    BottomNavigationView bottomNavigation;
 
     private TextToSpeech tts;
     private int touchCnt = 0;
@@ -36,6 +41,9 @@ public class TryInputActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_try_input);
+
+        bottomNavigation = findViewById(R.id.bottomNavigationView);
+        bottomNavigation.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
 
         tts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
             @Override
@@ -109,4 +117,27 @@ public class TryInputActivity extends AppCompatActivity {
         overridePendingTransition(0, 0);
         TryInputActivity.this.finish();
     }
+    BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                    Intent intent;
+                    switch (item.getItemId()) {
+                        case R.id.person:
+                            intent = new Intent(getApplicationContext(),JobListActivity.class);
+                            startActivity(intent);
+                            break;
+                        case R.id.home:
+                            intent = new Intent(getApplicationContext(),SelectorActivity.class);
+                            startActivity(intent);
+                            break;
+                        case R.id.calander:
+                            intent = new Intent(getApplicationContext(),ScheduleActivity.class);
+                            startActivity(intent);
+                            break;
+                    }
+                    overridePendingTransition(0, 0);
+                    TryInputActivity.this.finish();
+                    return false;
+                }
+            };
 }

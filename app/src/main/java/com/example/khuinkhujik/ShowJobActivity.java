@@ -1,5 +1,6 @@
 package com.example.khuinkhujik;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.TypefaceCompatApi26Impl;
@@ -10,6 +11,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +19,8 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -29,12 +33,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShowJobActivity extends AppCompatActivity {
+
+    BottomNavigationView bottomNavigation;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_job);
 
+        bottomNavigation = findViewById(R.id.bottomNavigationView);
+        bottomNavigation.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
+
         readCSVFIle();
+
     }
 
     private void readCSVFIle() {
@@ -159,4 +170,27 @@ public class ShowJobActivity extends AppCompatActivity {
         overridePendingTransition(0, 0);
         ShowJobActivity.this.finish();
     }
+    BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                    Intent intent;
+                    switch (item.getItemId()) {
+                        case R.id.person:
+                            intent = new Intent(getApplicationContext(),JobListActivity.class);
+                            startActivity(intent);
+                            break;
+                        case R.id.home:
+                            intent = new Intent(getApplicationContext(),SelectorActivity.class);
+                            startActivity(intent);
+                            break;
+                        case R.id.calander:
+                            intent = new Intent(getApplicationContext(),ScheduleActivity.class);
+                            startActivity(intent);
+                            break;
+                    }
+                    overridePendingTransition(0, 0);
+                    ShowJobActivity.this.finish();
+                    return false;
+                }
+            };
 }

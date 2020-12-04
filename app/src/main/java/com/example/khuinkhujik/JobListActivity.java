@@ -1,13 +1,21 @@
 package com.example.khuinkhujik;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 public class JobListActivity extends AppCompatActivity {
+
+    BottomNavigationView bottomNavigation;
 
     Button button1; //경영, 사무, 금융, 보험
     Button button2; //연구 및 공학기술
@@ -25,6 +33,8 @@ public class JobListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_job_list);
 
+        bottomNavigation = findViewById(R.id.bottomNavigationView);
+
         button1 = (Button)findViewById(R.id.button); //경영, 사무, 금융, 보험
         button2 = (Button)findViewById(R.id.button2); //연구 및 공학기술
         button3 = (Button)findViewById(R.id.button3); //교육, 법률, 사회복지, 경찰, 소방 및 군인
@@ -36,6 +46,11 @@ public class JobListActivity extends AppCompatActivity {
         button9 = (Button)findViewById(R.id.button9); //설치, 정비, 생산
         button10 = (Button)findViewById(R.id.button10); //농림어업직
 
+        bottomNavigation = findViewById(R.id.bottomNavigationView);
+        bottomNavigation.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
+        Menu menu = bottomNavigation.getMenu();
+        MenuItem menuItem = menu.getItem(0);
+        menuItem.setChecked(true);
     }
     public void firstButton(View v){
         Intent intent = new Intent(getApplicationContext(),ShowJobActivity.class);
@@ -141,4 +156,28 @@ public class JobListActivity extends AppCompatActivity {
         overridePendingTransition(0, 0);
         JobListActivity.this.finish();
     }
+
+    BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                    Intent intent;
+                    switch (item.getItemId()) {
+                        case R.id.person:
+                            intent = new Intent(getApplicationContext(),JobListActivity.class);
+                            startActivity(intent);
+                            break;
+                        case R.id.home:
+                            intent = new Intent(getApplicationContext(),SelectorActivity.class);
+                            startActivity(intent);
+                            break;
+                        case R.id.calander:
+                            intent = new Intent(getApplicationContext(),ScheduleActivity.class);
+                            startActivity(intent);
+                            break;
+                    }
+                    overridePendingTransition(0, 0);
+                    JobListActivity.this.finish();
+                    return false;
+                }
+            };
 }
