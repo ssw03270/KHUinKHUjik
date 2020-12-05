@@ -20,7 +20,8 @@
         <activity android:name=".JobListActivity" />
         <activity android:name=".ShowJobListActivity" />
         <activity android:name=".ScheduleActivity" />
-        <activity android:name=".SelectorActivity" >
+        <activity android:name=".SelectorActivity"/>
+        <activity android:name=".FunctionInformationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
