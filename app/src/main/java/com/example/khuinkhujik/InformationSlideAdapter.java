@@ -22,13 +22,14 @@ public class InformationSlideAdapter extends PagerAdapter {
     }
 
     public int[] slide_images={
-            R.drawable.infor1,
-            R.drawable.infor2,
-            R.drawable.infor3,
-            R.drawable.infor4,
-            R.drawable.infor5,
-            R.drawable.infor6,
-            R.drawable.infor7,
+            R.drawable.infor11,
+            R.drawable.infor22,
+            R.drawable.infor33,
+            R.drawable.infor44,
+            R.drawable.infor55,
+            R.drawable.infor66,
+            R.drawable.infor77,
+            R.drawable.infor88
     };
 
     @Override

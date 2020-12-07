@@ -8,8 +8,8 @@
     <ImageView
         android:id="@+id/slide_image"
         android:layout_width="match_parent"
-        android:layout_height="600dp"
-        app:srcCompat="@drawable/infor1"/>
+        android:layout_height="match_parent"
+        app:srcCompat="@drawable/infor11"/>
 
 
 </RelativeLayout>

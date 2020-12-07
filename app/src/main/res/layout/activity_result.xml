@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ResultActivity">
+
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
@@ -17,20 +19,20 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
             android:background="@android:color/transparent"
-            android:src="@drawable/mic"
-            android:onClick="controlMic"/>
+            android:onClick="controlMic"
+            android:src="@drawable/mic" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:gravity="center"
-            android:textSize="25sp"
             android:fontFamily="@font/notosans"
-            android:textStyle="bold"
+            android:gravity="center"
+            android:text="영상 촬영을 끝으로 \n 이력서 작성이 끝났습니다"
             android:textColor="#000000"
-            android:text="영상 촬영을 끝으로 \n 이력서 작성이 끝났습니다"/>
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -38,4 +40,31 @@
             android:layout_height="wrap_content"
             android:src="@drawable/mascotgirl" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/touchInfoText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="넘어가려면 화면을 터치하세요."
+        android:textSize="35sp"
+        android:fontFamily="@font/bmyeonsung"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/homeButton"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="처음으로"
+        android:fontFamily="@font/notosans"
+        android:background="@drawable/box_type2"
+        android:textSize="40sp"
+        android:visibility="invisible"
+        android:onClick="goToMain"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

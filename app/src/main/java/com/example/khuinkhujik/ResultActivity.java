@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.speech.tts.TextToSpeech;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -20,11 +21,18 @@ public class ResultActivity extends AppCompatActivity {
 
     private TextToSpeech tts;
     private TextView introText;
+    public Button button;
+    public TextView touchInfoTextView;
     private int touchCnt = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
+
+        button = findViewById(R.id.homeButton);
+        touchInfoTextView = findViewById(R.id.touchInfoText);
 
         tts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
             @Override
@@ -57,6 +65,14 @@ public class ResultActivity extends AppCompatActivity {
             }
         }, 1000);
     }
+
+    public void goToMain(View view) {
+        Intent intent = new Intent(getApplicationContext(),SelectorActivity.class);
+        startActivity(intent);
+        overridePendingTransition(0, 0);
+        ResultActivity.this.finish();
+    }
+
     public boolean onTouchEvent(MotionEvent event) {
         if(event.getAction()==MotionEvent.ACTION_DOWN){
             touchCnt += 1;
@@ -72,6 +88,9 @@ public class ResultActivity extends AppCompatActivity {
                 if(sp.getBoolean("micOn", true)) {
                     tts.speak(introText.getText().toString(),TextToSpeech.QUEUE_FLUSH, null);
                 }
+            }else if(touchCnt == 3){
+                touchInfoTextView.setText("");
+                button.setVisibility(View.VISIBLE);
             }
         }
         return true;

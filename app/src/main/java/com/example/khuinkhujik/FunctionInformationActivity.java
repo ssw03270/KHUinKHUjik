@@ -49,7 +49,7 @@ public class FunctionInformationActivity extends AppCompatActivity {
         });
         nextImageView.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
-                if(mCurrentPage < 6) mSlideViewPager.setCurrentItem(mCurrentPage + 1);
+                if(mCurrentPage < 7) mSlideViewPager.setCurrentItem(mCurrentPage + 1);
             }
         });
     }
@@ -57,7 +57,7 @@ public class FunctionInformationActivity extends AppCompatActivity {
     public boolean onTouchEvent(MotionEvent event){
         switch (event.getAction()){
             case MotionEvent.ACTION_UP:
-                if(mCurrentPage == 6){
+                if(mCurrentPage == 7){
                     Intent intent = new Intent(getApplicationContext(),SelectorActivity.class);
                     startActivity(intent);
                     overridePendingTransition(0, 0);
@@ -80,15 +80,22 @@ public class FunctionInformationActivity extends AppCompatActivity {
 
             mCurrentPage = position;
 
-            if(position == 6){
+            if(position == 7){
                 nextImageView.setVisibility(View.INVISIBLE);
                 prevImageView.setVisibility(View.VISIBLE);
-                textView.setText("시작하려면 여기를 누르세요");
+                Intent intent = new Intent(getApplicationContext(),SelectorActivity.class);
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                FunctionInformationActivity.this.finish();
             }else if(position == 0){
                 prevImageView.setVisibility(View.INVISIBLE);
                 nextImageView.setVisibility(View.VISIBLE);
                 textView.setText("");
                 canNextPage = false;
+            }else if(position==6){
+                nextImageView.setVisibility(View.VISIBLE);
+                prevImageView.setVisibility(View.VISIBLE);
+                textView.setText("다음 페이지로 넘기면 앱이 실행됩니다.");
             }else{
                 nextImageView.setVisibility(View.VISIBLE);
                 prevImageView.setVisibility(View.VISIBLE);
